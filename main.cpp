@@ -1,5 +1,5 @@
 // Placeholder code, does not work properly
-
+// Change soon
 
 #include <ncurses.h>
 #include <string.h>
