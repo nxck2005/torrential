@@ -15,8 +15,8 @@ int main(void) {
             doResize();
         }
         
-        // Wait up to 10ms for input, and so that doResize() doesn't block getch()
-        timeout(10);
+        // Wait up to 100ms for input, and so that doResize() doesn't block getch()
+        timeout(100);
         int ch = getch();
         
         // Handle input if we got any

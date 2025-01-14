@@ -45,7 +45,11 @@ void drawMenu() {
     getmaxyx(stdscr, term.yMax, term.xMax);
     attron(COLOR_PAIR(1));
 
-    int xDim = term.yMax - 5;
+
+    // no of rows
+    int xDim = term.yMax - 7;
+
+    // no of cols
     int yDim = term.xMax / 5;
 
     WINDOW* menuwin = newwin(xDim, yDim, 3, 1);
@@ -65,10 +69,29 @@ void drawMenu() {
     wrefresh(menuwin);
 }
 
+void drawContent() {
+    getmaxyx(stdscr, term.yMax, term.xMax);
+    attron(COLOR_PAIR(1));
+
+    // no of rows same as menu
+    int xDim = term.yMax - 7;
+
+    // reduce the space taken by menu
+    int yDim = term.xMax - ((term.xMax / 5) + 2);
+
+    WINDOW* contentwin = newwin(xDim, yDim, 3, (term.xMax / 5) + 2);
+    wattron(contentwin, COLOR_PAIR(1));
+    box(contentwin, 0, 0);
+    refresh();
+    wrefresh(contentwin);
+    attroff(COLOR_PAIR(1));
+    wattroff(contentwin, COLOR_PAIR(1));
+}
+
 void drawAllWindows() {
     drawTitle();
     drawMenu();
-    getch();
+    drawContent();
 }
 
 void handleResize(int sig) {
