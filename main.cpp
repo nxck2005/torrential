@@ -5,8 +5,33 @@ using namespace std;
 /* main */
 
 int main(void) {
-    startncurses(true, true); /* Initialize ncurses with cbreak and noecho mode */
-    drawAllWindows(); /* Draw all windows */
-    endncurses(); /* End ncurses session */
+    // Initialize everything
+    startncurses(true, true);
+    drawAllWindows();
+
+    while (1) {
+        // Check for resize first
+        if (resize_needed) {
+            doResize();
+        }
+        
+        // Wait up to 10ms for input, and so that doResize() doesn't block getch()
+        timeout(10);
+        int ch = getch();
+        
+        // Handle input if we got any
+        if (ch != ERR) {
+            switch (ch) {
+                case 'q':
+                    goto cleanup; 
+            }
+        }
+        
+        // Could add other periodic tasks here
+        // Like updating display, checking status, etc.
+    }
+
+cleanup:
+    endncurses();
     return 0;
 }
