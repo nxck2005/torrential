@@ -6,4 +6,3 @@ struct terminfo {
 };
 
 extern struct terminfo term;
-
