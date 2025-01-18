@@ -35,8 +35,8 @@ void drawTitle() {
     wrefresh(titlewin);
     attroff(COLOR_PAIR(1));
     wattroff(titlewin, COLOR_PAIR(1));
-    mvwprintw(titlewin, 0, 2, "torrential %s", VERSION);
-    mvwprintw(titlewin, 0, term.xMax - 44, "build timestamp: %s", buildTimestamp);
+    mvwprintw(titlewin, 0, 2, "torrential client %s", VERSION);
+    mvwprintw(titlewin, 0, term.xMax - 44, "build at: %s", buildTimestamp);
     refresh();
     wrefresh(titlewin);
 }
@@ -62,9 +62,9 @@ void drawMenu() {
 
     int textBegin = term.yMax/4;
 
-    mvwprintw(menuwin, textBegin, 2, "> Current");
-    mvwprintw(menuwin, textBegin + 2, 2, "> Download");
-    mvwprintw(menuwin, textBegin + 4, 2, "> Seeding");
+    mvwprintw(menuwin, textBegin, 2, "Current");
+    mvwprintw(menuwin, textBegin + 2, 2, "Download");
+    mvwprintw(menuwin, textBegin + 4, 2, "Seeding");
     refresh();
     wrefresh(menuwin);
 }
