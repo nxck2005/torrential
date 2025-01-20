@@ -1,3 +1,2 @@
 # torrential
-Terminal BitTorrent Client
-
+Terminal BitTorrent Client built on ncurses
