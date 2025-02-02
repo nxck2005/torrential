@@ -4,6 +4,8 @@ using namespace std;
 
 /* main */
 
+// Main loop for program here
+
 int main(void) {
     // Initialize everything
     startncurses(true, true);
