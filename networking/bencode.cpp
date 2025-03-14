@@ -3,17 +3,21 @@
 #include <fstream>
 using namespace std;
 
-string BENC_decode(string rawdict) {
-    return "";
+string parseToString(string rawdict) {
+    ifstream readfile(rawdict);
+    string line;
+    string fullfile;
+    if (!readfile) {
+        return NULL;
+    }
+    while (getline(readfile, line)) {
+        fullfile += line;
+    }
+    readfile.close();
+    return fullfile;
 }
 
 int main() {
-    ifstream readfile("bencoder.torrent");
-    if (!readfile) {
-        cout << "File not found" << endl;
-        return 1;
-    } else {
-        cout << "File found!";
-    }
-    readfile.close();
+    string file = parseToString("sample.torrent");
+    cout << file << endl;
 }
