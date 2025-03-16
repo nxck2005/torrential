@@ -1,10 +1,16 @@
 #include <iostream>
 #include <string>
+#include <vector>
 #include <fstream>
 using namespace std;
 
-string parseToString(string rawdict) {
-    ifstream readfile(rawdict);
+struct b_decoded {
+    string announce;
+    vector<string> info;
+};
+
+string parseToString(string filename) {
+    ifstream readfile(filename);
     string line;
     string fullfile;
     if (!readfile) {
@@ -15,4 +21,8 @@ string parseToString(string rawdict) {
     }
     readfile.close();
     return fullfile;
+}
+
+string getAnnounce(string rawstr) {
+    return "";
 }
