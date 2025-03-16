@@ -1,9 +1,11 @@
 // header files
-#include "ui/uidefines.hpp"
+#include <ncurses.h>
 #include "ui/uihandler.hpp"
-using namespace std;
 
 /* main */
+
+extern volatile sig_atomic_t resize_needed;
+void doResize();
 
 // Main loop for program here
 
@@ -14,7 +16,7 @@ int main(void) {
 
     while (1) {
         // Check for resize first
-        if (resize_needed) {
+        if (resize_needed != 0) {
             doResize();
         }
         

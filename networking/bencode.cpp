@@ -8,16 +8,11 @@ string parseToString(string rawdict) {
     string line;
     string fullfile;
     if (!readfile) {
-        return NULL;
+        return "";
     }
     while (getline(readfile, line)) {
         fullfile += line;
     }
     readfile.close();
     return fullfile;
-}
-
-int main() {
-    string file = parseToString("sample.torrent");
-    cout << file << endl;
 }

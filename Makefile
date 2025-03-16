@@ -1,4 +1,4 @@
-CXX = g++
+CXX = /usr/bin/g++
 CXXFLAGS = -Wall -Wextra -pedantic
 LDFLAGS = -lncurses
 BUILD_DIR = ./build
