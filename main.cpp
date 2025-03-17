@@ -1,7 +1,7 @@
 // header files
 #include <ncurses.h>
 #include "ui/uihandler.hpp"
-
+/* #include "torrent/bencode.cpp" */
 /* main */
 
 extern volatile sig_atomic_t resize_needed;
