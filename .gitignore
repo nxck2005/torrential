@@ -12,3 +12,7 @@ CMakeCache.txt
 *.swp
 *~p
 /.ideatorrent/bc
+.idea/editor.xml
+.idea/misc.xml
+.idea/vcs.xml
+.idea/workspace.xml
