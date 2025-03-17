@@ -26,3 +26,7 @@ string parseToString(string filename) {
 string getAnnounce(string rawstr) {
     return "";
 }
+
+int main(void) {
+    
+}
