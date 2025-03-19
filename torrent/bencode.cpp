@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <fstream>
+
 using namespace std;
 
 struct b_decoded {
